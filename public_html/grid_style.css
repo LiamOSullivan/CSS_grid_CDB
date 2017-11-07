@@ -5,6 +5,7 @@
 *{
     margin: 0;
     padding: 0;
+    border: solid 1px;
     /*box-sizing: border-box; padding and border are included in the total width and height of the elements*/
 
 }
@@ -33,6 +34,7 @@ p, li {
     grid-template-areas:
         "head"
         "nav"
+        "menu"
         "realtime"
         "traffic"
         "weather"
@@ -40,6 +42,7 @@ p, li {
         "glance"
         "mapAlert"
         "twitter"
+        "latest"
         "connectCSG"
         "footer"
         ;
@@ -48,6 +51,75 @@ p, li {
 
 }
 
+
+/*@media only screen and (min-width:620px) {
+     For mobile phones: 
+    .menu, .main, .right {
+        width:100%;
+    }
+}*/
+
+/*//1024 × 768*/ 
+@media (min-width: 1024px)  {
+    #page{
+        display: grid;
+        width:100%;
+        height:768px ;
+
+        /*grid-gap:1em;*/
+        /* grid-auto-rows:100px; */
+        /*grid-auto-rows: minmax(100px, auto);*/
+        grid-template-areas:
+            "head head head"
+            "nav nav ."
+            "menu realtime realtime"
+            "menu traffic traffic"
+            "menu weather weather"
+            "cameras cameras cameras"
+            "glance glance glance"
+            "mapAlert mapAlert mapAlert"
+            "twitter latest connectCSG"
+            "footer footer footer"
+            ;
+        grid-template-rows: auto auto 100px 100px 100px auto;
+        grid-template-columns: 1fr 1fr 1fr;
+
+    }
+}
+/*netbook resolution of 1280 × 800*/
+
+/*1440 × 900*/
+@media (min-width: 1440px)  {
+    #page{
+        display: grid;
+        width:100%;
+        height:900px ;
+
+        /*grid-gap:1em;*/
+        /* grid-auto-rows:100px; */
+        /*grid-auto-rows: minmax(100px, auto);*/
+        grid-template-areas:
+            "head   head    head    nav    nav"
+            
+            "menu   traffic weather glance  glance"
+            "menu   traffic weather glance  glance"
+            "menu   traffic weather glance  glance"
+            "menu   traffic twitter glance  glance"
+            "menu   latest  twitter  glance  glance"
+            "menu   latest  twitter glance  glance"
+            "connectCSG cameras cameras mapAlert mapAlert"
+            "connectCSG cameras cameras mapAlert mapAlert"   
+            "footer  footer footer  footer  footer"
+            ".       copyr   copyr   copyr  ."
+            
+            
+            ;
+        grid-template-rows: 120px auto;
+        grid-template-columns: 2fr 3fr 3fr 2fr 2fr;
+        grid-gap: 2px;
+
+    }
+}
 
 #page > .analytics{
 
@@ -60,19 +132,24 @@ p, li {
 }
 #page > .cameras{
     grid-area: cameras;
+    background-color: lightblue;
 }
 #page > .connectCSG{
     grid-area: connectCSG;
+    background-color: chocolate;
 }
 #page > .copyright{
-    grid-area: copyright;
+    grid-area: copyr;
+    background-color: #ddd ;
 }
 #page > footer{
     grid-area: footer;
+    background-color: #eee ;
+
 }
 #page > .glance{
     grid-area: glance;
-    /*    background-color: lightgrey;*/
+    background-color: lightgrey;
 }
 #page > .latest{
     grid-area: latest;
@@ -82,6 +159,7 @@ p, li {
 }
 #page > menu{
     grid-area: menu;
+     background-color: chartreuse;
 }
 #page > nav{
     grid-area: nav;
@@ -106,7 +184,8 @@ p, li {
 }
 
 #page > .realtime{
-    grid-area: realtime;
+    grid-area: rt;
+    background-color:  indianred;
 }
 
 #page > .traffic{
@@ -125,7 +204,7 @@ p, li {
 
 /*#page > div:nth-child(odd){
     background-color: lightgrey;
-}*/
+}
 /*
 
 page > div:nth-child(even){
@@ -134,23 +213,6 @@ page > div:nth-child(even){
 
 
 
-/*@media (min-width: 768), screen  {
-  #page{
-    display: grid;
-    width:100%;
-    height: 500px;
-  
-    grid-gap:1em;
-     grid-auto-rows:100px; 
-    grid-auto-rows: minmax(100px, auto);
-    grid-template-areas:
-        "head head head head"
-        "nav "
-        "footer footer footer footer"
-        ;
-     grid-template-rows: 200px, 1fr, 100px;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-   
 
-}*/
+
 
