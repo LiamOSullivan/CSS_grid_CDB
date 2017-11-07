@@ -1,0 +1,156 @@
+/* 
+    Author     : Liam
+*/
+
+*{
+    margin: 0;
+    padding: 0;
+    /*box-sizing: border-box; padding and border are included in the total width and height of the elements*/
+
+}
+
+/*p, li, h1, h2 , h3, a{
+    font-family: 'Proxima Nova', Georgia, sans-serif;
+    font-weight: normal;
+
+}
+
+p, li {  
+    color: rgba(0,0,0,0.8);
+    font-size: 1.5vw;
+    text-align: justify;
+}*/
+
+/*//mobile first*/
+#page{
+    display: grid;
+    width:100%;
+    height: 500px;
+
+    /*grid-gap:1em;*/
+    /* grid-auto-rows:100px; */
+    /*grid-auto-rows: minmax(100px, auto);*/
+    grid-template-areas:
+        "head"
+        "nav"
+        "realtime"
+        "traffic"
+        "weather"
+        "cameras"
+        "glance"
+        "mapAlert"
+        "twitter"
+        "connectCSG"
+        "footer"
+        ;
+    grid-template-rows: auto;
+    grid-template-columns: 1fr;
+
+}
+
+
+#page > .analytics{
+
+}
+
+#page > header{
+    grid-area: head;
+    background-color: crimson;
+
+}
+#page > .cameras{
+    grid-area: cameras;
+}
+#page > .connectCSG{
+    grid-area: connectCSG;
+}
+#page > .copyright{
+    grid-area: copyright;
+}
+#page > footer{
+    grid-area: footer;
+}
+#page > .glance{
+    grid-area: glance;
+    /*    background-color: lightgrey;*/
+}
+#page > .latest{
+    grid-area: latest;
+}
+#page > .mapAlerter{
+    grid-area: mapAlert;
+}
+#page > menu{
+    grid-area: menu;
+}
+#page > nav{
+    grid-area: nav;
+}
+#page > .nestedChart1{
+    grid-area: nest1;
+}
+#page > .nestedChart2{
+    grid-area: nest2;
+}
+#page > .nestedChart3{
+    grid-area: nest3;
+}
+#page > .nestedChart4{
+    grid-area: nest4;
+}
+#page > .nestedChart5{
+    grid-area: nest5;
+}
+#page > .nestedChart6{
+    grid-area: nest6;
+}
+
+#page > .realtime{
+    grid-area: realtime;
+}
+
+#page > .traffic{
+    grid-area: traffic;
+}
+
+#page > .twitter{
+    grid-area: twitter;
+}
+
+
+#page > .weather{
+    grid-area: weather;
+}
+
+
+/*#page > div:nth-child(odd){
+    background-color: lightgrey;
+}*/
+/*
+
+page > div:nth-child(even){
+    background-color: white;
+}*/
+
+
+
+/*@media (min-width: 768), screen  {
+  #page{
+    display: grid;
+    width:100%;
+    height: 500px;
+  
+    grid-gap:1em;
+     grid-auto-rows:100px; 
+    grid-auto-rows: minmax(100px, auto);
+    grid-template-areas:
+        "head head head head"
+        "nav "
+        "footer footer footer footer"
+        ;
+     grid-template-rows: 200px, 1fr, 100px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+   
+
+}*/
+
