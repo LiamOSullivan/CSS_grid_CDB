@@ -39,28 +39,24 @@ p, li {
         "head"
         "nav"
         "sidebar"
-        "traffic"
-        "weather"
-        "cameras"
+        "rt"
         "glance"
-        "mapAlert"
-        "twitter"
-        "latest"
         "connectCSG"
         "footer"
         "copyr"
         ;
     grid-template-rows: auto;
     grid-template-columns: 1fr;
+    
 
 }
 
 /*420*/
-@media (min-width: 420px)  {
+@media screen and (min-width: 420px)  {
     #page{
         display: grid;
         width:100%;
-        height: 1000px;
+        height: 1200px;
 
 /*        grid-gap:1em;
          
@@ -73,13 +69,14 @@ p, li {
             "sidebar    sidebar"
             "sidebar    sidebar"
             "traffic weather"
-            "traffic weather" 
+            "traffic weather"
+            "traffic weather"
             "glance      glance "
             "glance      glance "
             "glance      glance "
             "twitter      latest"
             "twitter      latest"
-            "connectCSG connectCSG"
+            "twitter connectCSG"
             "mapAlert   mapAlert"
             "mapAlert   mapAlert"
             "cameras     cameras"  
@@ -87,7 +84,7 @@ p, li {
             "footer     footer"
             "copyr      copyr"
             ;
-        grid-template-rows: repeat(19, 1fr);
+        grid-template-rows: repeat(20, 1fr);
         grid-template-columns: 1fr 1fr;
         grid-gap: 2px;
 
@@ -96,7 +93,7 @@ p, li {
 
  
 /*800 × 600*/
-@media (min-width: 800px)  {
+@media screen and (min-width: 800px)  {
     #page{
         display: grid;
         width:100%;
@@ -132,7 +129,7 @@ p, li {
 /*1024 × 768*/
 /*netbook resolution of 1280 × 800*/
 /*1440 × 900*/
-@media (min-width: 1024px)  {
+@media screen and (min-width: 1280px)  {
     #page{
         display: grid;
         width:100%;
@@ -173,10 +170,7 @@ p, li {
     /*    background-color: crimson;*/
 
 }
-#page > .cameras{
-    grid-area: cameras;
-    /*background-color: lightblue;*/
-}
+
 #page > .connectCSG{
     grid-area: connectCSG;
     /*background-color: chocolate;*/
@@ -194,9 +188,7 @@ p, li {
     grid-area: glance;
     /*background-color: lightgrey;*/
 }
-#page > .latest{
-    grid-area: latest;
-}
+
 #page > .mapAlerter{
     grid-area: mapAlert;
 }
@@ -226,21 +218,42 @@ p, li {
     grid-area: nest6;
 }
 
-#page > .realtime{
+#page > .realtime {
+    display: grid;
+    align-content: space-between;
+    grid-template-areas:
+        "."
+      "weather"
+      "traffic"
+      "cameras"
+      "twitter"
+      "latest"
+      ;      
+    grid-template-columns: 1fr; 
     grid-area: rt;
+      
+    
     /*    background-color:  indianred;*/
 }
 
-#page > .traffic{
+#page > .realtime .latest{
+    grid-area: latest;
+}
+
+#page > .realtime .traffic{
     grid-area: traffic;
 }
 
-#page > .twitter{
+#page > .realtime .twitter{
     grid-area: twitter;
 }
 
+#page > .realtime .cameras{
+    grid-area: cameras;
+    /*background-color: lightblue;*/
+}
 
-#page > .weather{
+#page > .realtime .weather{
     grid-area: weather;
 }
 
